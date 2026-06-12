@@ -1,0 +1,203 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('fontes/idroid.otf') format('opentype'); /* Certifique-se de que o caminho para a fonte esteja correto */
+    font-weight: normal;
+}
+
+:root { /* Variáveis de cores e fontes para facilitar a manutenção do estilo */
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --font-padrao:arial, verdana, helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor0);
+    margin: 0;
+    padding: 0;
+   font-family: var(--font-padrao);
+
+}
+
+a.external::after {
+    content: '\00A0\1F517'; /* Adiciona um ícone de link externo após o texto do link */
+}
+main p{
+    margin: 15px 0px; /* margem superior e inferior de 15px, sem margem lateral */
+    text-align: justify; /* alinha o texto nas margens esquerda e direita */
+    text-indent: 30px; /* recuo da primeira linha */
+    line-height: 1em; /* espaçamento entre linhas */
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold; /* Garante que o texto em negrito seja realmente destacado */
+    background-color: var(--cor1);
+    padding: 2px 4px; /* Adiciona um fundo para destacar ainda mais o texto em negrito */
+}
+
+main a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 4px; /* Adiciona um fundo para destacar o link */
+}
+
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* Gradiente de cor para o fundo do header */
+    min-height: 150px;
+    text-align: center;
+    
+}
+header > p {
+    color: white;
+    font-family: var(--font-padrao);
+    font-size: 1.2em;
+    margin: auto;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.699); /* Adiciona uma sombra ao texto para melhorar a legibilidade */
+
+}
+
+header > h1 { /* Estilo para o título dentro do header */
+    color: white;
+    font-family: var(--fonte-destaque);
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+nav { /* Estilo para a barra de navegação */
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.151);
+}
+ nav > a{ /* Estilo para os links dentro da barra de navegação */
+color: var(--cor1);
+padding: 10px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px; /* Adiciona bordas arredondadas aos links */
+ }
+
+ nav > a:hover { /* Estilo para o estado de hover dos links */
+    background-color: var(--cor3);
+    color: var(--cor5);
+    transition-duration: 0.5s; /* Adiciona uma transição suave para a mudança de cor */
+    
+    
+
+ }
+main { /* Estilo para o conteúdo principal */
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    color: var(--cor3);
+    font-family: var(--fonte-android);
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.5em;
+    backgound-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px; /* Recuo da primeira linha */
+}
+
+main img {
+    width: 100%;
+    height: auto;
+}
+main img.pequena { /* Estilo específico para a imagem do Bugdroid */
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+aside { /* Estilo para a barra lateral */
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.212);
+     margin-bottom: 30px;
+}
+
+div.video > iframe { /* Estilo para o iframe dentro do contêiner de vídeo */
+    position: absolute; /* Posiciona o iframe de forma absoluta dentro do contêiner, assim o video fica no meio, não fica deslocado dentro do site, pois é um video externo. jeito mais facil de tornar o video responsivo*/
+top: 5% ;
+left: 5%;
+width: 90%;
+height: 90%;
+
+
+}
+
+div.video{ /* Estilo para o contêiner do vídeo */
+
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /* Remove a margem lateral e adiciona uma margem inferior */
+    padding-bottom: 50%;
+    position: relative;
+}
+
+aside > ul { /* Estilo para a lista dentro da barra lateral */
+   list-style-position: inside; /* Coloca os marcadores dentro da caixa da lista */
+   list-style-type: '\2714\00A0\00A0'; /* Altera o tipo de marcador para quadrado */
+    columns: 2; /* Divide a lista em 2 colunas */
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /* Remove a margem lateral e adiciona uma margem inferior */
+    border-radius: 10px 10px 0px 0px; /* Adiciona bordas arredondadas apenas na parte superior */
+
+}
+
+footer{
+background-color: var(--cor5);
+color: white;
+text-align: center;
+font-size: 0.9em;
+padding: 5px;
+
+}
+
+footer a { /* Estilo para os links no rodapé */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover { /* Estilo para o estado de hover dos links no rodapé */
+    text-decoration: underline;
+    color: var(--cor1);
+}
